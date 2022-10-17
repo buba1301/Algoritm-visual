@@ -10,7 +10,7 @@ const Bar = ({ width, height }) => {
 
   return (
     <div className={s.bar} style={barStyle}>
-      Bar
+      <span>{height}</span>
     </div>
   );
 };

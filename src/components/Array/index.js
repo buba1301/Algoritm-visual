@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Bar from '../shared/Bar';
-import { actions } from '../slices';
+import Bar from '../../shared/Bar';
+import { actions } from '../../slices';
 
 import s from './Array.module';
-
-// const newArray = createArray(20);
 
 const Array = () => {
   const [arrayLength, setArrayLength] = useState(30);

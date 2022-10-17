@@ -1,7 +1,7 @@
+
 import React from 'react';
+import Container from './components/Container';
 
-import Array from './components/Array';
-
-const App = () => <Array />;
+const App = () => <Container />
 
 export default App;
