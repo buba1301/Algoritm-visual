@@ -1,5 +1,7 @@
+import Array from './components/Array';
+
 const App = () => {
-  return <>Single Page Application Template</>;
+  return <Array />;
 };
 
 export default App;
