@@ -6,7 +6,7 @@ const arraySlice = createSlice({
   initialState: [],
   reducers: {
     createArray(state, action) {
-      return [...state, ...createArray(30, 600)];
+      return [...state, ...createArray(action.payload)];
     },
   },
 });
