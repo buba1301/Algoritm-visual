@@ -7,8 +7,14 @@ const arraySlice = createSlice({
   name: 'array',
   initialState: [],
   reducers: {
-    createArray(state, action) {
-      return (state = [...createArray(action.payload)]);
+    createArray: (state, action) => (state = createArray(action.payload)),
+    bubbleSort: (state, action) => {
+      const copyArr = state;
+      const a = copyArr[1];
+      const b = copyArr[0];
+      copyArr[0] = a;
+      copyArr[1] = b;
+      state = copyArr;
     },
   },
 });

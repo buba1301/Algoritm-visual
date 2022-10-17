@@ -7,8 +7,12 @@ import s from './Button.module';
 const Button = ({ name }) => {
   const dispatch = useDispatch();
 
+  console.log(actions);
+
   const handleClick = ({ target }) => {
-    dispatch(actions.createArray(30));
+    // dispatch(actions.createArray(30));
+    dispatch(actions.setActiveElement([0, 1]));
+    dispatch(actions.bubbleSort());
   };
 
   return (

@@ -22,7 +22,7 @@ const Array = () => {
   return (
     <div className={s.array}>
       {newArray.map((item, index) => (
-        <Bar key={item} width={barWidth} height={item} />
+        <Bar key={item} width={barWidth} height={item} index={index} />
       ))}
     </div>
   );
