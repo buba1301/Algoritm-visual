@@ -6,7 +6,7 @@ import { actions } from '../../slices';
 import s from './Array.module';
 
 const Array = () => {
-  const [arrayLength, _setArrayLength] = useState(30);
+  const [arrayLength, setArrayLength] = useState(30);
 
   const newArray = useSelector((state) => state.valueList);
 
