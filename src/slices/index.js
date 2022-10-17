@@ -1,13 +1,13 @@
 import { combineReducers } from 'redux';
 
-import { reducer as ArrayReducer, actions as ArrayActions } from './Array';
+import { reducer as valueList, actions as ArrayActions } from './Array';
 
 export default combineReducers({
-  ArrayReducer,
+  valueList,
 });
 
 const actions = {
-  ArrayActions,
+  ...ArrayActions,
 };
 
 export { actions };
