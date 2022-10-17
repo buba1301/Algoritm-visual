@@ -1,9 +1,18 @@
 import React from 'react';
 
-import s from './Bar.module.scss';
+import s from './Bar.module';
 
-const Bar = () => {
-  return <div className={s.bar}>Bar</div>;
+const Bar = ({ width, height }) => {
+  const barStyle = {
+    width: `${width}px`,
+    height: `${height}px`,
+  };
+
+  return (
+    <div className={s.bar} style={barStyle}>
+      Bar
+    </div>
+  );
 };
 
 export default Bar;
