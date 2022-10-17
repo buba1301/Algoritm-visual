@@ -4,10 +4,16 @@ const getRandomNumber = (a, b) => {
   return Math.floor(Math.random() * (max - min) + min);
 };
 
-export const createArray = (count) => {
+const createArray = (lenght) => {
   const res = [];
 
-  return res.reduce((acc, item) => acc.push(getRandomNumber(30, 600)), []);
+  for (let i = 0; i < lenght; i++) {
+    const newValue = getRandomNumber(30, 600);
+
+    res.push(newValue);
+  }
+
+  return res;
 };
 
 export default createArray;
