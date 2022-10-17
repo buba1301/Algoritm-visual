@@ -1,7 +1,5 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
-// import reducer from '../slices';
-
-const reducer = {};
+import reducer from './slices';
 
 const middleware = getDefaultMiddleware({
   immutableCheck: false,
