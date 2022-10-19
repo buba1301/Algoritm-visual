@@ -1,8 +1,9 @@
+/* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
-import log from 'eslint-plugin-react/lib/util/log';
 
 const initialState = {
   activeElement: [],
+  sortedElement: [],
 };
 
 const UISlice = createSlice({
@@ -12,6 +13,11 @@ const UISlice = createSlice({
     setActiveElement: (state, action) => {
       const value = action.payload;
       state.activeElement = value;
+    },
+    setSortedElement: (state, action) => {
+      const value = action.payload;
+      console.log('sliceSortesElement', value);
+      state.sortedElement = [value, ...state.sortedElement];
     },
   },
 });

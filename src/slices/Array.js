@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-return-assign */
 import { createSlice } from '@reduxjs/toolkit';
@@ -8,14 +9,8 @@ const arraySlice = createSlice({
   initialState: [],
   reducers: {
     createArray: (state, action) => (state = createArray(action.payload)),
-    bubbleSort: (state, action) => {
-      const copyArr = state;
-      const a = copyArr[1];
-      const b = copyArr[0];
-      copyArr[0] = a;
-      copyArr[1] = b;
-      state = copyArr;
-    },
+    setArray: (state, action) => (state = action.payload),
+    bubbleSort: (state, action) => {},
   },
 });
 

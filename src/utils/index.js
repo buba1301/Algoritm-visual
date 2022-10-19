@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 const getRandomNumber = (a, b) => {
   const min = Math.ceil(a);
   const max = Math.floor(b);
@@ -10,7 +11,9 @@ const createArray = (lenght) => {
   for (let i = 0; i < lenght; i++) {
     const newValue = getRandomNumber(30, 600);
 
-    res.push(newValue);
+    if (!res.includes(newValue)) {
+      res.push(newValue);
+    }
   }
 
   return res;

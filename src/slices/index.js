@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import { reducer as valueList, actions as ArrayActions } from './Array';
 import { reducer as UIState, actions as UIActions } from './UIState';
 
-export default combineReducers({
+const reducer = combineReducers({
   valueList,
   UIState,
 });
@@ -13,4 +13,4 @@ const actions = {
   ...UIActions,
 };
 
-export { actions };
+export { actions, reducer };
