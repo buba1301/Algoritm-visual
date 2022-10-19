@@ -1,3 +1,4 @@
+/* eslint-disable guard-for-in */
 export const setArray = (params, listenerApi, actions) => {
   const { valueList } = listenerApi.getState();
 
@@ -8,4 +9,8 @@ export const setArray = (params, listenerApi, actions) => {
   }
 
   listenerApi.dispatch(actions.setArray(res));
+};
+
+export const setDelay = async (listenerApi) => {
+  await listenerApi.delay(100);
 };

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { createListenerMiddleware } from '@reduxjs/toolkit';
 
 import bubbleSort from './bubbleSort';

@@ -1,6 +1,7 @@
+/* eslint-disable no-await-in-loop */
 import { actions } from '../slices';
 
-import { setArray } from './helpers';
+import { setArray, setDelay } from './helpers';
 
 const selectedSort = async (action, listenerApi) => {
   const res = [...action.payload];
@@ -13,16 +14,18 @@ const selectedSort = async (action, listenerApi) => {
       const currnetElement = res[j];
       const minElement = res[minIndex];
 
-      listenerApi.dispatch(actions.setActiveElement([minIndex, j]));
+      const activeElements = [minIndex, j];
 
-      await listenerApi.delay(500);
+      listenerApi.dispatch(actions.setActiveElement(activeElements));
+
+      await setDelay(listenerApi);
 
       if (currnetElement < minElement) {
         minIndex = j;
       }
     }
 
-    await listenerApi.delay(2000);
+    await setDelay(listenerApi);
 
     if (minIndex !== i) {
       const right = res[i];
@@ -30,7 +33,7 @@ const selectedSort = async (action, listenerApi) => {
 
       listenerApi.dispatch(actions.setActiveElement([i, minIndex]));
 
-      await listenerApi.delay(500);
+      await setDelay(listenerApi);
 
       const params = {
         [minIndex]: right,
@@ -40,13 +43,14 @@ const selectedSort = async (action, listenerApi) => {
       res[i] = left;
       res[minIndex] = right;
 
-      setArray(params, listenerApi, actions);
+      await setArray(params, listenerApi, actions);
 
-      listenerApi.dispatch(actions.setSortedElement(i));
-
-      await listenerApi.delay(500);
+      await setDelay(listenerApi);
     }
+
+    listenerApi.dispatch(actions.setSortedElement(i));
   }
+  listenerApi.dispatch(actions.setSortedElement(length));
 };
 
 export default selectedSort;

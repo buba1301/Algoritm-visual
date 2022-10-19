@@ -1,3 +1,4 @@
+/* eslint-disable no-await-in-loop */
 /* eslint-disable guard-for-in */
 
 import { actions } from '../slices';
