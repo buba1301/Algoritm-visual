@@ -5,10 +5,8 @@ import {
 } from '@reduxjs/toolkit';
 
 import { actions, reducer } from '../slices';
-import bubbleSort from '../features/listner';
-import selectionSort from '../features/lisner1';
 
-// import listenerMiddleware from '../features/index';
+import { bubbleSort, selectedSort } from '../features';
 
 const listenerMiddleware = createListenerMiddleware();
 
@@ -19,7 +17,7 @@ listenerMiddleware.startListening({
 
 listenerMiddleware.startListening({
   actionCreator: actions.selectionSort,
-  effect: selectionSort,
+  effect: selectedSort,
 });
 
 const store = configureStore({

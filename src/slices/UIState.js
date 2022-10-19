@@ -4,6 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   activeElement: [],
   sortedElement: [],
+  helperElement: [],
 };
 
 const UISlice = createSlice({
@@ -16,7 +17,10 @@ const UISlice = createSlice({
     },
     setSortedElement: (state, action) => {
       const value = action.payload;
-      console.log('sliceSortesElement', value);
+      state.sortedElement = [value, ...state.sortedElement];
+    },
+    setHelperElement: (state, action) => {
+      const value = action.payload;
       state.sortedElement = [value, ...state.sortedElement];
     },
   },
