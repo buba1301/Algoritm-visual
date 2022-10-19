@@ -3,7 +3,7 @@
 
 import { actions } from '../slices';
 
-import { setArray } from './helpers';
+import { setArray, setDelay } from './helpers';
 
 const bubbleSort = async (action, listenerApi) => {
   const res = [...action.payload];
@@ -14,9 +14,11 @@ const bubbleSort = async (action, listenerApi) => {
       const left = res[j];
       const right = res[j + 1];
 
-      listenerApi.dispatch(actions.setActiveElement([j, j + 1]));
+      const activeElements = [j, j + 1];
 
-      await listenerApi.delay(300);
+      listenerApi.dispatch(actions.setActiveElement(activeElements));
+
+      await setDelay(listenerApi);
 
       if (left > right) {
         res.splice(j, 1, right);
@@ -29,7 +31,7 @@ const bubbleSort = async (action, listenerApi) => {
 
         setArray(params, listenerApi, actions);
 
-        await listenerApi.delay(300);
+        await setDelay(listenerApi);
       }
     }
 
