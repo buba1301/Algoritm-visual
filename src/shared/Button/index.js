@@ -4,16 +4,21 @@ import { actions } from '../../slices';
 
 import s from './Button.module';
 
+const selectAction = () => ({
+  createArray: () => {},
+  bubbleSort: (valueList) => actions.bubbleSort(valueList),
+  selectionSort: (valueList) => actions.selectionSort(valueList),
+});
+
 const Button = ({ name }) => {
   const valueList = useSelector((state) => state.valueList);
 
   const dispatch = useDispatch();
 
   const handleClick = ({ target }) => {
-    // dispatch(actions.createArray(30));
-    // dispatch(actions.setActiveElement([0, 1]));
-    // dispatch(actions.bubbleSort(valueList));
-    dispatch(actions.bubbleSort(valueList));
+    console.log('Target clicked: ', target);
+    console.log('Target clicked func: ', selectAction()[name](valueList));
+    dispatch(selectAction()[name](valueList));
   };
 
   return (

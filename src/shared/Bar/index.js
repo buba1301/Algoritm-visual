@@ -5,12 +5,8 @@ import { useSelector } from 'react-redux';
 import s from './Bar.module';
 
 const Bar = ({ width, height, index }) => {
-  const valueList = useSelector((state) => state.valueList);
-
   const activeElements = useSelector((state) => state.UIState.activeElement);
   const sortedElements = useSelector((state) => state.UIState.sortedElement);
-
-  // console.log('Bar', sortedElements, sortedElements.includes(index));
 
   const barStyle = {
     width: `${width}px`,

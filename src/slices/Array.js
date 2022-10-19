@@ -11,6 +11,7 @@ const arraySlice = createSlice({
     createArray: (state, action) => (state = createArray(action.payload)),
     setArray: (state, action) => (state = action.payload),
     bubbleSort: (state, action) => {},
+    selectionSort: (state, action) => {},
   },
 });
 

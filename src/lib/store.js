@@ -4,9 +4,23 @@ import {
   createListenerMiddleware,
 } from '@reduxjs/toolkit';
 
-import listenerMiddleware from '../features/listner';
+import { actions, reducer } from '../slices';
+import bubbleSort from '../features/listner';
+import selectionSort from '../features/lisner1';
 
-import { reducer } from '../slices';
+// import listenerMiddleware from '../features/index';
+
+const listenerMiddleware = createListenerMiddleware();
+
+listenerMiddleware.startListening({
+  actionCreator: actions.bubbleSort,
+  effect: bubbleSort,
+});
+
+listenerMiddleware.startListening({
+  actionCreator: actions.selectionSort,
+  effect: selectionSort,
+});
 
 const store = configureStore({
   reducer,
@@ -18,4 +32,4 @@ const store = configureStore({
   devTools: process.env.NODE_ENV !== 'production',
 });
 
-export default store
+export default store;
