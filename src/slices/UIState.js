@@ -21,7 +21,7 @@ const UISlice = createSlice({
     },
     setHelperElement: (state, action) => {
       const value = action.payload;
-      state.sortedElement = [value, ...state.sortedElement];
+      state.helperElement = [value, ...state.sortedElement];
     },
   },
 });

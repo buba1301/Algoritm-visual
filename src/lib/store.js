@@ -6,7 +6,7 @@ import {
 
 import { actions, reducer } from '../slices';
 
-import { bubbleSort, selectedSort } from '../features';
+import { bubbleSort, selectedSort, fastSort } from '../features';
 
 const listenerMiddleware = createListenerMiddleware();
 
@@ -18,6 +18,11 @@ listenerMiddleware.startListening({
 listenerMiddleware.startListening({
   actionCreator: actions.selectionSort,
   effect: selectedSort,
+});
+
+listenerMiddleware.startListening({
+  actionCreator: actions.fastSort,
+  effect: fastSort,
 });
 
 const store = configureStore({

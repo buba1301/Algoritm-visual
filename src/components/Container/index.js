@@ -5,7 +5,7 @@ import s from './Container.module';
 import Array from '../Array';
 import Button from '../../shared/Button';
 
-const buttonsName = ['createArray', 'bubbleSort', 'selectionSort'];
+const buttonsName = ['createArray', 'bubbleSort', 'selectionSort', 'fastSort'];
 
 const Container = () => (
   <div className={s.container}>

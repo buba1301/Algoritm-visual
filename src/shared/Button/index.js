@@ -8,6 +8,7 @@ const selectAction = () => ({
   createArray: () => {},
   bubbleSort: (valueList) => actions.bubbleSort(valueList),
   selectionSort: (valueList) => actions.selectionSort(valueList),
+  fastSort: (valueList) => actions.fastSort(valueList),
 });
 
 const Button = ({ name }) => {
@@ -16,9 +17,8 @@ const Button = ({ name }) => {
   const dispatch = useDispatch();
 
   const handleClick = ({ target }) => {
-    console.log('Target clicked: ', target);
-    console.log('Target clicked func: ', selectAction()[name](valueList));
-    dispatch(selectAction()[name](valueList));
+    const action = selectAction()[name];
+    dispatch(action(valueList));
   };
 
   return (

@@ -7,6 +7,7 @@ import s from './Bar.module';
 const Bar = ({ width, height, index }) => {
   const activeElements = useSelector((state) => state.UIState.activeElement);
   const sortedElements = useSelector((state) => state.UIState.sortedElement);
+  const helperElements = useSelector((state) => state.UIState.helperElement);
 
   const barStyle = {
     width: `${width}px`,
@@ -16,6 +17,7 @@ const Bar = ({ width, height, index }) => {
   const classNames = cn(s.bar, {
     [s.active]: activeElements.includes(index),
     [s.sorted]: sortedElements.includes(index),
+    [s.helper]: helperElements.includes(index),
   });
 
   return (
