@@ -12,5 +12,5 @@ export const setArray = (params, listenerApi, actions) => {
 };
 
 export const setDelay = async (listenerApi) => {
-  await listenerApi.delay(0);
+  await listenerApi.delay(100);
 };
